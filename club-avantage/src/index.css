@@ -1,2 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Déclaration de variables CSS personnalisées */
+:root {
+  --color-primary: #a48663;
+  --color-primary-hover: #8a6f53;
+  --color-secondary: #3a2c23;
+  --color-accent: #d6b68b;
+  --color-background: #e7e2db;
+  --color-text: #3a2c23;
+  --color-light-text: #e7e2db;
+}

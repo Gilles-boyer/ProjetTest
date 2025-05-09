@@ -33,7 +33,7 @@ export default function CategoryTable({ categories, onEdit, onDelete, onToggleAc
         value={search}
         onChange={(e) => {
           setSearch(e.target.value);
-          setCurrentPage(1); // Reset to first page on search
+          setCurrentPage(1);
         }}
       />
 
@@ -54,16 +54,29 @@ export default function CategoryTable({ categories, onEdit, onDelete, onToggleAc
               <td>
                 <input
                   type="checkbox"
-                  className="toggle toggle-primary"
+                  className="toggle toggle-success"
+                  style={{
+                    accentColor: 'success',
+                    width: '2rem',
+                    height: '1.2rem',
+                  }}
                   checked={cat.is_active}
                   onChange={() => onToggleActive(cat.id)}
                 />
               </td>
               <td className="space-x-2">
-                <button className="btn btn-sm btn-ghost text-primary" onClick={() => onEdit(cat)}>
+                <button
+                  className="btn btn-sm"
+                  style={{ backgroundColor: '#a48663', color: '#fff' }}
+                  onClick={() => onEdit(cat)}
+                >
                   <FaEdit />
                 </button>
-                <button className="btn btn-sm btn-ghost text-error" onClick={() => onDelete(cat.id)}>
+                <button
+                  className="btn btn-sm"
+                  style={{ backgroundColor: '#e74c3c', color: '#fff' }}
+                  onClick={() => onDelete(cat.id)}
+                >
                   <FaTrash />
                 </button>
               </td>
@@ -72,10 +85,10 @@ export default function CategoryTable({ categories, onEdit, onDelete, onToggleAc
         </tbody>
       </table>
 
-      {/* Pagination controls */}
       <div className="flex justify-between items-center mt-4">
         <button
           className="btn btn-sm"
+          style={{ backgroundColor: '#a48663', color: '#fff' }}
           onClick={handlePrevious}
           disabled={currentPage === 1}
         >
@@ -86,6 +99,7 @@ export default function CategoryTable({ categories, onEdit, onDelete, onToggleAc
         </span>
         <button
           className="btn btn-sm"
+          style={{ backgroundColor: '#a48663', color: '#fff' }}
           onClick={handleNext}
           disabled={currentPage === totalPages}
         >
