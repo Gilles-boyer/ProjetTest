@@ -4,7 +4,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 export default function CategoryTable({ categories, onEdit, onDelete, onToggleActive }) {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 8;
 
   const filtered = categories.filter(cat =>
     cat.name.toLowerCase().includes(search.toLowerCase())
